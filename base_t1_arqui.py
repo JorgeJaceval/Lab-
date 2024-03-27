@@ -42,8 +42,16 @@ def visualizar_mapa(lista):
     print(tabla)
 
 
-juego,enemigos = crear_mapa(10,250)
+juego,enemigos = crear_mapa(10,10)
 visualizar_mapa(juego)
 
 a = input()
+x = input()
+y= input()
+
+def binario():
+    for 
+
+if a == 1:
+    input()
 
