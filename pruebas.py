@@ -177,10 +177,14 @@ def conversion(x,y,eleccion):
 
 
 
-print("Elección")
+print("Elección:")
 z = input()
 print("Eje X")
 x = input()
 print("Eje Y")
 y = input()
 print(conversion(x,y,z))
+
+
+def hay_nave(x,y,lista):
+    
