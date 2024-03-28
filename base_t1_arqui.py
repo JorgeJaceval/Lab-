@@ -50,7 +50,25 @@ x = input()
 y= input()
 
 def binario():
-    for 
+    coor_x = len(str(x))
+    coor_y = len(str(y))
+    coor_finx = str()
+    coor_finy = str()
+    n = 0
+    aux1 = coor_x
+    aux2 = coor_y
+    while n < coor_x:
+        pos = (str(x))[aux1-1] #Empezamos a tomar el numero binario de izquierda a derecha
+        #queremos verificar si es que pos es un 0 o un 1
+        if pos == 1:
+            coor_finx += 2**n
+        if pos == 0:
+            continue
+        n += 1
+
+
+
+
 
 if a == 1:
     input()
