@@ -239,13 +239,11 @@ while end != True:
     x = input ("Ingrese coordenada X: ")
     y = input("Ingrese coordenada Y: ")
     coor_decimales = convertir(x,y,elec)
-    print(coor_decimales)
-    print(enemigos)
     if hay_nave(enemigos,coor_decimales[0], coor_decimales[1]):
         #Primero debo conseguir el tipo ("letra") de la nave en cuestion
         print(juego)
-        print(juego[coor_decimales[0]][coor_decimales[1]])
-
+        tipo_nave = juego[coor_decimales[0]][coor_decimales[1]] #Esta es la letra de la nave
+        
 
     t += 1
 
