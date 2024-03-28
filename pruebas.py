@@ -1,4 +1,4 @@
-def binario(x,y,eleccion):
+def conversion(x,y,eleccion):
     coor_x = len(str(x))
     coor_y = len(str(y))
     coor_finx = int()
@@ -29,7 +29,7 @@ def binario(x,y,eleccion):
                 n += 1
                 continue
         return [coor_finx, coor_finy]
-    if eleccion == 3:
+    if eleccion == "3":
         while n < coor_x:
             aux1 -= 1
             pos = (str(x)) [aux1]
@@ -104,7 +104,7 @@ def binario(x,y,eleccion):
         n=0
         while n < coor_y:
             aux1 -= 1
-            pos = (str(x)) [aux1]
+            pos = (str(y)) [aux1]
             if pos == "A" or pos == "a":
                 coor_finy = coor_finy + (10 * 16**n)
                 n += 1
@@ -173,6 +173,7 @@ def binario(x,y,eleccion):
                 coor_finy = coor_finy + (9 * 16**n)
                 n += 1
                 continue
+        return [coor_finx,coor_finy]
 
 
 
@@ -182,4 +183,4 @@ print("Eje X")
 x = input()
 print("Eje Y")
 y = input()
-print(binario(x,y,z))
+print(conversion(x,y,z))
