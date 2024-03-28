@@ -222,10 +222,12 @@ visualizar_mapa(juego)
 
 def hay_nave (lista_enemigos, x, y):
     for c in lista_enemigos:
-        if c[0] == x:
-            if c[1] == y:
+        if c[0] == int(x):
+            if c[1] == int(y):
                 #Ambas coordenadas coinciden, hay nave
                 return True
+    else:
+        return False
             
 #Ahora hay que ver si el tipo ingresado al inicio del turno coincidan con el tipo de nave
 
@@ -238,7 +240,8 @@ while end != True:
     y = input("Ingrese coordenada Y: ")
     coor_decimales = convertir(x,y,elec)
     print(coor_decimales)
-    if hay_nave:
+    print(enemigos)
+    if hay_nave(enemigos,coor_decimales[0], coor_decimales[1]):
         #Primero debo conseguir el tipo ("letra") de la nave en cuestion
         print(juego)
         print(juego[coor_decimales[0]][coor_decimales[1]])
