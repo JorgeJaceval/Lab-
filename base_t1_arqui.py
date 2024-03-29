@@ -255,12 +255,12 @@ def hay_nave (lista_enemigos, x, y):
         return False
             
 juego,enemigos = crear_mapa(5,2)
-t = 0 # Contador de turnos
+t = 1 # Contador de turnos
 end  = False # Indicador del estado del juego.
 while end != True:
     visualizar_mapa(juego)
     print("Turno " + str(t))
-    elec = input("Ingrese su elección \n 1. Binaria \n 2. Octal \n 3. Hexadecimal")
+    elec = input("Ingrese su elección \n 1. Binaria \n 2. Octal \n 3. Hexadecimal\n")
     x = input ("Ingrese coordenada X: ")
     y = input("Ingrese coordenada Y: ")
     pos_decimal, elec = convertir(x, y, elec)
