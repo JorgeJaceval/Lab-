@@ -102,6 +102,8 @@ def convertir(x,y,eleccion):
         while n < coor_x:
             aux1 -= 1
             pos = (str(x)) [aux1]
+            if pos =="X" or pos=="x":
+                continue
             if pos == "A" or pos == "a":
                 coor_finx = coor_finx + (10 * 16**n)
                 n += 1
@@ -174,6 +176,8 @@ def convertir(x,y,eleccion):
         while n < coor_y:
             aux1 -= 1
             pos = (str(y)) [aux1]
+            if pos =="X" or pos=="x":
+                continue
             if pos == "A" or pos == "a":
                 coor_finy = coor_finy + (10 * 16**n)
                 n += 1
