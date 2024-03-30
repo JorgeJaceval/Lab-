@@ -11,7 +11,8 @@ Supuestos utilizados:
 
 
 Me encargué de hacer la conversión binaria y hexadecimal.
-La binaria la realicé a través de la suma de potencias.
-La hexadecimal a través de la suma de potencias.
+Según lo visto en clases, a través del metodo del polinomio caracteristico, pude realizar la conversión tanto de los numeros binarios como de los hexadecimales.
+
+Para esto, fue necesario manejar el numero binario y hexadecimal de derecha hacia izquierda (Ejemplo 1010 / A), siendo su exponente su posición, y el numero en cuestión el cual se multiplica (sea con un 2^n o un 16^n, según corresponde), finalmente, luego de recorrer todo el número, se realizará una suma total, el cual corresponde a la conversión final de las coordenadas a decimal.
 
 
