@@ -260,7 +260,7 @@ def hay_nave (lista_enemigos, x, y):
                 #Ambas coordenadas coinciden, hay nave
                 return True
     else:
-        print("¡Vaya parguela! No le has dado a ninguna nave")
+        print("¡Vaya! No le has dado a ninguna nave")
         return False
             
 juego,enemigos = crear_mapa(5,2)
