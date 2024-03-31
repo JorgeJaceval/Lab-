@@ -42,6 +42,8 @@ def visualizar_mapa(lista):
     print(tabla)
 
 def convertir(x,y,eleccion):
+    #Esta función lleva a cabo los tres tipos de conversiones a decimal. Toma el input x e y, así como la elección del jugador (1,2 ó 3).
+
     coor_x = len(str(x))
     coor_y = len(str(y))
     coor_finx = int()
@@ -249,6 +251,8 @@ def convertir(x,y,eleccion):
         return [coor_finx,coor_finy], 3
 
 def hay_nave (lista_enemigos, x, y):
+    #Esta función procesa la opción elegida por el usuario para hacerla coincidir con la base de la nave en tales coordenadas, si es que coincide, la nave se borra
+    #de la lista de enemigos y se reemplaza por un "?" 
     for c in lista_enemigos:
         if c[0] == int(x):
             if c[1] == int(y):
@@ -279,7 +283,7 @@ while end != True:
             tipo_nave = 3
         if tipo_nave == elec: #Verifica si la nave corresponde al tipo elegido
             enemigos.remove((pos_decimal[0], pos_decimal[1])) #Quita al enemigo hundido de la lista de enemigos
-            juego[pos_decimal[0]][pos_decimal[1]] = "?"
+            juego[pos_decimal[0]][pos_decimal[1]] = "?" #Remueve la nave del mapa y lo reemplaza por "?"
             print("¡Le has dado rico!")
             if not enemigos: #verifica que la lista esté vacia para terminar el juego
                 end = True
