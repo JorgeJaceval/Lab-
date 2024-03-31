@@ -48,31 +48,31 @@ def convertir(x,y,eleccion):
     coor_y = len(str(y))
     coor_finx = int()
     coor_finy = int()
-    n = 0
+    pos = 0 #posición en el string
     aux1 = coor_x #largo de coor x
     aux2 = coor_y #largo de coor y
 
     if eleccion == "1":
-        while n < coor_x:
+        while pos < coor_x:
             aux1 -= 1
-            pos = (str(x))[aux1] #Empezamos a tomar el numero binario de izquierda a derecha
-            #queremos verificar si es que pos es un 0 o un 1
-            if pos == "1":
-                coor_finx += 2**n
-                n += 1
-            if pos == "0":
-                n += 1
+            num = (str(x))[aux1] #Empezamos a tomar el numero binario de izquierda a derecha
+            #queremos verificar si es que num es un 0 o un 1
+            if num == "1":
+                coor_finx += 2**pos
+                pos += 1
+            if num == "0":
+                pos += 1
                 continue
-        n = 0
-        while n < coor_y:
+        pos = 0
+        while pos < coor_y:
             aux2 -= 1
-            pos = (str(y))[aux2] #Empezamos a tomar el numero binario de izquierda a derecha
-            #queremos verificar si es que pos es un 0 o un 1
-            if pos == "1":
-                coor_finy += 2**n
-                n += 1
-            if pos == "0":
-                n += 1
+            num = (str(y))[aux2] #Empezamos a tomar el numero binario de izquierda a derecha
+            #queremos verificar si es que num es un 0 o un 1
+            if num == "1":
+                coor_finy += 2**pos
+                pos += 1
+            if num == "0":
+                pos += 1
                 continue
         return [coor_finx, coor_finy], 1
     
@@ -100,153 +100,154 @@ def convertir(x,y,eleccion):
                 size_right_oc = size_right_oc - 1
         return [total_left, total_right], 2 #Retorna x e y
     
-    if eleccion == "3":
-        while n < coor_x:
+    if eleccion == "3": #Mismo proceso que el binario, ya que la base sigue siendo el polinomio caracteristico.
+        while pos < coor_x:
             aux1 -= 1
-            pos = (str(x)) [aux1]
-            if pos =="X" or pos=="x":
+            num = (str(x)) [aux1]
+            if num =="X" or num=="x":
                 continue
-            if pos == "A" or pos == "a":
-                coor_finx = coor_finx + (10 * 16**n)
-                n += 1
-                continue
-
-            if pos == "B" or pos == "b":
-                coor_finx =  coor_finx + (11 * 16**n)
-                n += 1
+            
+            if num == "A" or num == "a":
+                coor_finx = coor_finx + (10 * 16**pos)
+                pos += 1
                 continue
 
-            if pos == "C" or pos == "c":
-                coor_finx = coor_finx + (12 * 16**n)
-                n += 1
+            if num == "B" or num == "b":
+                coor_finx =  coor_finx + (11 * 16**pos)
+                pos += 1
                 continue
 
-            if pos == "D" or pos == "d":
-                coor_finx = coor_finx + (13 * 16**n)
-                n += 1
+            if num == "C" or num == "c":
+                coor_finx = coor_finx + (12 * 16**pos)
+                pos += 1
                 continue
 
-            if pos == "E" or pos == "e":
-                coor_finx = coor_finx + (14 * 16**n)
-                n += 1
+            if num == "D" or num == "d":
+                coor_finx = coor_finx + (13 * 16**pos)
+                pos += 1
                 continue
 
-            if pos == "F" or pos == "f":
-                coor_finx = coor_finx + (15 * 16**n)
-                n += 1
+            if num == "E" or num == "e":
+                coor_finx = coor_finx + (14 * 16**pos)
+                pos += 1
                 continue
-            if pos == "0":
-                n += 1
+
+            if num == "F" or num == "f":
+                coor_finx = coor_finx + (15 * 16**pos)
+                pos += 1
                 continue
-            if pos == "1":
-                coor_finx = coor_finx + (1 * 16**n)
-                n += 1
+            if num == "0":
+                pos += 1
                 continue
-            if pos == "2":
-                coor_finx = coor_finx + (2 * 16**n)
-                n += 1
+            if num == "1":
+                coor_finx = coor_finx + (1 * 16**pos)
+                pos += 1
                 continue
-            if pos == "3":
-                coor_finx = coor_finx + (3 * 16**n)
-                n += 1
+            if num == "2":
+                coor_finx = coor_finx + (2 * 16**pos)
+                pos += 1
                 continue
-            if pos == "4":
-                coor_finx = coor_finx + (4 * 16**n)
-                n += 1
+            if num == "3":
+                coor_finx = coor_finx + (3 * 16**pos)
+                pos += 1
                 continue
-            if pos == "5":
-                coor_finx = coor_finx + (5 * 16**n)
-                n += 1
+            if num == "4":
+                coor_finx = coor_finx + (4 * 16**pos)
+                pos += 1
                 continue
-            if pos == "6":
-                coor_finx = coor_finx + (6 * 16**n)
-                n += 1
+            if num == "5":
+                coor_finx = coor_finx + (5 * 16**pos)
+                pos += 1
                 continue
-            if pos == "7":
-                coor_finx = coor_finx + (7 * 16**n)
-                n += 1
+            if num == "6":
+                coor_finx = coor_finx + (6 * 16**pos)
+                pos += 1
                 continue
-            if pos == "8":
-                coor_finx = coor_finx + (8 * 16**n)
-                n += 1
+            if num == "7":
+                coor_finx = coor_finx + (7 * 16**pos)
+                pos += 1
                 continue
-            if pos == "9":
-                coor_finx = coor_finx + (9 * 16**n)
-                n += 1
+            if num == "8":
+                coor_finx = coor_finx + (8 * 16**pos)
+                pos += 1
                 continue
-        n=0
-        while n < coor_y:
+            if num == "9":
+                coor_finx = coor_finx + (9 * 16**pos)
+                pos += 1
+                continue
+        pos=0
+        while pos < coor_y:
             aux1 -= 1
-            pos = (str(y)) [aux1]
-            if pos =="X" or pos=="x":
+            num = (str(y)) [aux1]
+            if num =="X" or num=="x":
                 continue
-            if pos == "A" or pos == "a":
-                coor_finy = coor_finy + (10 * 16**n)
-                n += 1
-                continue
-
-            if pos == "B" or pos == "b":
-                coor_finy =  coor_finy + (11 * 16**n)
-                n += 1
+            if num == "A" or num == "a":
+                coor_finy = coor_finy + (10 * 16**pos)
+                pos += 1
                 continue
 
-            if pos == "C" or pos == "c":
-                coor_finy = coor_finy + (12 * 16**n)
-                n += 1
+            if num == "B" or num == "b":
+                coor_finy =  coor_finy + (11 * 16**pos)
+                pos += 1
                 continue
 
-            if pos == "D" or pos == "d":
-                coor_finy = coor_finy + (13 * 16**n)
-                n += 1
+            if num == "C" or num == "c":
+                coor_finy = coor_finy + (12 * 16**pos)
+                pos += 1
                 continue
 
-            if pos == "E" or pos == "e":
-                coor_finy = coor_finy + (14 * 16**n)
-                n += 1
+            if num == "D" or num == "d":
+                coor_finy = coor_finy + (13 * 16**pos)
+                pos += 1
                 continue
 
-            if pos == "F" or pos == "f":
-                coor_finy = coor_finy + (15 * 16**n)
-                n += 1
+            if num == "E" or num == "e":
+                coor_finy = coor_finy + (14 * 16**pos)
+                pos += 1
                 continue
-            if pos == "0":
-                n += 1
+
+            if num == "F" or num == "f":
+                coor_finy = coor_finy + (15 * 16**pos)
+                pos += 1
                 continue
-            if pos == "1":
-                coor_finy = coor_finy + (1 * 16**n)
-                n += 1
+            if num == "0":
+                pos += 1
                 continue
-            if pos == "2":
-                coor_finy = coor_finy + (2 * 16**n)
-                n += 1
+            if num == "1":
+                coor_finy = coor_finy + (1 * 16**pos)
+                pos += 1
                 continue
-            if pos == "3":
-                coor_finy = coor_finy + (3 * 16**n)
-                n += 1
+            if num == "2":
+                coor_finy = coor_finy + (2 * 16**pos)
+                pos += 1
                 continue
-            if pos == "4":
-                coor_finy = coor_finy + (4 * 16**n)
-                n += 1
+            if num == "3":
+                coor_finy = coor_finy + (3 * 16**pos)
+                pos += 1
                 continue
-            if pos == "5":
-                coor_finy = coor_finy + (5 * 16**n)
-                n += 1
+            if num == "4":
+                coor_finy = coor_finy + (4 * 16**pos)
+                pos += 1
                 continue
-            if pos == "6":
-                coor_finy = coor_finy + (6 * 16**n)
-                n += 1
+            if num == "5":
+                coor_finy = coor_finy + (5 * 16**pos)
+                pos += 1
                 continue
-            if pos == "7":
-                coor_finy = coor_finy + (7 * 16**n)
-                n += 1
+            if num == "6":
+                coor_finy = coor_finy + (6 * 16**pos)
+                pos += 1
                 continue
-            if pos == "8":
-                coor_finy = coor_finy + (8 * 16**n)
-                n += 1
+            if num == "7":
+                coor_finy = coor_finy + (7 * 16**pos)
+                pos += 1
                 continue
-            if pos == "9":
-                coor_finy = coor_finy + (9 * 16**n)
-                n += 1
+            if num == "8":
+                coor_finy = coor_finy + (8 * 16**pos)
+                pos += 1
+                continue
+            if num == "9":
+                coor_finy = coor_finy + (9 * 16**pos)
+                pos += 1
                 continue
         return [coor_finx,coor_finy], 3
 
